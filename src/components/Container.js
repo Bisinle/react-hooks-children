@@ -7,14 +7,19 @@ function Container({
   direction = "horizontal", // possible values: vertical, horizontal
   contentPosition = "center", // possible values: left, right, center
 }) {
+  //to see what type of HTML the cild is
+  console.log(children[0].type);
+
+  const containerStyle = {
+    backgroundColor: "black",
+    color: "white",
+  };
   return (
-    <div className={`container ${textPosition}`}>
+    <div className={`container ${textPosition}`} style={containerStyle}>
       {header ? <h2>{header}</h2> : null}
 
-      <div className={`container-children ${direction} ${contentPosition}`}>
-        {children}
+        {children[0]}
       </div>
-    </div>
   );
 }
 
